@@ -1,12 +1,12 @@
 pluginManagement {
-	repositories {
-		maven { url 'https://repo.spring.io/snapshot' }
-		maven { url 'https://repo.spring.io/milestone' }
-		gradlePluginPortal()
-	}
+    repositories {
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
+        gradlePluginPortal()
+    }
 }
 
-rootProject.name = "spring-angular-keycloak-demo"
+rootProject.name = 'spring-angular-keycloak-demo'
 
 include 'backend'
 include 'frontend'

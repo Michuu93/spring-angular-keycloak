@@ -13,7 +13,6 @@ node {
 
 jar.dependsOn 'yarn_run_build'
 
-
 jar {
-	from 'dist/apps/home' into 'static'
+	from 'dist/frontend' into 'static'
 }
