@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/keycloak")
+@RequestMapping("/api/keycloak")
 class KeycloakController(private val config: KeycloakProperties, @Value("\${keycloakRequiredUserRole}") requiredUserRole: String) {
 
     init {

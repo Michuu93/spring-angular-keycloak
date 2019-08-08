@@ -8,5 +8,5 @@ docker build -t michuu93/spring-angular-keycloak-demo .
 ```
 Run:
 ```shell
-docker run --name spring-angular-keycloak-demo -d -p 9082:8080 michuu93/spring-angular-keycloak-demo
+docker run --name spring-angular-keycloak-demo -d -p 8080:9082 michuu93/spring-angular-keycloak-demo
 ```
