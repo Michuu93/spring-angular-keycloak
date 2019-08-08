@@ -4,12 +4,12 @@ import {KeycloakService} from 'keycloak-angular';
 @Component({
     selector: 'app-toolbar',
     template: `
-        <div class="toolbar">
-            <button (click)="logout()">Logout</button>
-        </div>
-    `,
-    styles: [`
-    `]
+        <button routerLink="/">Public</button>
+        <button routerLink="/protected">Protected</button>
+        <button onclick="window.location.href = '/api/keycloak/config';">Keycloak Configuration</button>
+        <button onclick="window.location.href = '/api/hello';">Backend Hello</button>
+        <button (click)="logout()">Logout</button>
+    `
 })
 export class ToolbarComponent {
     constructor(private keycloakService: KeycloakService) {

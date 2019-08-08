@@ -19,7 +19,7 @@ keycloak:
     - securityCollections:
         - name: public resource
           patterns:
-            - /keycloak/config
+            - /api/keycloak/config
   credentials:
     secret: TODO
   realm-key: TODO
