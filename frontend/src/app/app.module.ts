@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
-import {RootComponent} from './root/app.component';
+import {RootComponent} from './root/root.component';
 import {initializer} from './app-initializer';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {KeycloakConfigService} from './keycloak/keycloak-config.service';
