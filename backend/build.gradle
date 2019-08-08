@@ -12,7 +12,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-
+    implementation 'org.keycloak:keycloak-spring-boot-2-starter:4.0.0.Final'
+    
     implementation project(':frontend')
     
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

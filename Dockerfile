@@ -8,5 +8,5 @@ RUN gradle build
 FROM adoptopenjdk/openjdk11:jdk-11.0.3_7-slim
 WORKDIR /app
 COPY --from=BUILDER /home/gradle/src/backend/build/libs/backend*.jar spring-angular-keycloak.jar
-EXPOSE 8080
+EXPOSE 9082
 CMD ["java","-jar","spring-angular-keycloak.jar"]

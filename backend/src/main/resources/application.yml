@@ -1,1 +1,25 @@
+server:
+  port: 9082
 
+keycloakRequiredUserRole: TODO
+keycloak:
+  enabled: true
+  auth-server-url: TODO
+  realm: TODO
+  resource: TODO
+  ssl-required: external
+#  bearer-only: true
+  security-constraints:
+    - authRoles:
+        -  ${keycloakRequiredUserRole}
+      securityCollections:
+        - name: protected resource
+          patterns:
+            - /*
+    - securityCollections:
+        - name: public resource
+          patterns:
+            - /keycloak/config
+  credentials:
+    secret: TODO
+  realm-key: TODO
