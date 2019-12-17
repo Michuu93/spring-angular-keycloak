@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {KeycloakService} from 'keycloak-angular';
 
 @Component({
@@ -8,14 +8,20 @@ import {KeycloakService} from 'keycloak-angular';
         <button routerLink="/protected">Protected</button>
         <button onclick="window.location.href = '/api/keycloak/config';">Keycloak Configuration</button>
         <button onclick="window.location.href = '/api/hello';">Backend Hello</button>
-        <button (click)="logout()">Logout</button>
+        <button (click)="logout()" *ngIf="isLogged">Logout</button>
     `
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+    isLogged: boolean;
+
     constructor(private keycloakService: KeycloakService) {
     }
 
     logout = async (): Promise<void> => {
         await this.keycloakService.logout();
+    };
+
+    ngOnInit(): void {
+        this.keycloakService.isLoggedIn().then(isLogged => this.isLogged = isLogged);
     }
 }

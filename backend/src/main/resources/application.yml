@@ -1,25 +1,24 @@
 server:
   port: 9082
 
-keycloakRequiredUserRole: TODO
+keycloakRequiredUserRole: user_role # user must have this role to have access
 keycloak:
-  enabled: true
-  auth-server-url: TODO
-  realm: TODO
-  resource: TODO
-  ssl-required: external
-#  bearer-only: true
-  security-constraints:
+  enabled: true # enables keycloak authentication
+  auth-server-url: http://localhost:8180/auth # keycloak server address (from the docker run command)
+  realm: SpringBootAngular # name of imported realm
+  resource: SpringBootAngularClient # name of imported client
+  security-constraints: # private resources (user with role required)
     - authRoles:
-        -  ${keycloakRequiredUserRole}
+        - ${keycloakRequiredUserRole}
       securityCollections:
         - name: protected resource
           patterns:
-            - /*
-    - securityCollections:
+            - /api/*
+    - securityCollections: # public resources (no required role)
         - name: public resource
           patterns:
             - /api/keycloak/config
   credentials:
-    secret: TODO
-  realm-key: TODO
+    secret: e4feade8-7df9-4c29-a0dd-b551095c8371 # (Realm Settings > Keys > Providers > rsa-generated)
+  realm-key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoG+YxCSIwL6ZgFxK4ir8NrUBp4yTPS3tkAbLDWR7BU1t1OCZX7YptHDBL6T3l+RQWeWl9mvihqK4BVMOHjQEqU1Oe4qWOHzQIzmoRX39W3+jy66IrVSqylGRVoRygAq8z6T00pESIlXpwOEZRo/a27/lVsFmxfGb/5EnHagDMU+9PHexIVomahzEYga72Rb03oJhoErHGhQqMPK6vyWuHWrDcgtZRmQYQ3eAfQc2MnVL69+vD+pvkZIFQ5WmIiM94toNd7V5Mz3rtzKN4ztQS9E3LhoQcU0uMBCtzti8zezuqLBbN7WMdSXjeQUjw6Sh78UYfoK7cJkN+29dyBmW7wIDAQAB"
+  # (Realm Settings > Keys > Active > RSA > Public Key)
