@@ -22,7 +22,7 @@ export class AppAuthGuard extends KeycloakAuthGuard {
         if (!this.isAuthEnabled) {
             return Promise.resolve(true);
         } else {
-            return super.canActivate(route, state);
+            return super.canActivate(route, state) as Promise<boolean>;
         }
     }
 

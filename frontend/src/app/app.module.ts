@@ -10,6 +10,7 @@ import {ProtectedComponent} from './protected/protected.component';
 import {HttpClientModule} from '@angular/common/http';
 import {PublicComponent} from './public/public.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,10 @@ import {ToolbarComponent} from './toolbar/toolbar.component';
             useFactory: initializer,
             multi: true,
             deps: [KeycloakService, KeycloakConfigService]
+        },
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
         }
     ],
     bootstrap: [RootComponent]

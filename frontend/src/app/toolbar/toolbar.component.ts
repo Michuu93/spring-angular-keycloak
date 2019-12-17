@@ -17,9 +17,7 @@ export class ToolbarComponent implements OnInit {
     constructor(private keycloakService: KeycloakService) {
     }
 
-    logout = async (): Promise<void> => {
-        await this.keycloakService.logout();
-    }
+    logout = async (): Promise<void> => await this.keycloakService.logout();
 
     ngOnInit(): void {
         this.keycloakService.isLoggedIn().then(isLogged => this.isLogged = isLogged);
