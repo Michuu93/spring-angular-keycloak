@@ -20,6 +20,6 @@ export function initializer(keycloakService: KeycloakService, keycloakConfigServ
                         onLoad: 'check-sso',
                         checkLoginIframe: false
                     }
-                })
+                });
             })).toPromise();
 }
