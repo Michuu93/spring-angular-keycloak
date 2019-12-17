@@ -17,7 +17,7 @@ export function initializer(keycloakService: KeycloakService, keycloakConfigServ
                         }
                     },
                     initOptions: {
-                        onLoad: 'check-sso',
+                        onLoad: 'login-required',
                         checkLoginIframe: false
                     }
                 });
