@@ -6,9 +6,10 @@ import {KeycloakService} from 'keycloak-angular';
     template: `
         <button routerLink="/">Public</button>
         <button routerLink="/protected">Protected</button>
+        <button (click)="logout()" *ngIf="isLogged">Logout (frontend)</button>
         <button onclick="window.location.href = '/api/keycloak/config';">Keycloak Configuration</button>
         <button onclick="window.location.href = '/api/hello';">Backend Hello</button>
-        <button (click)="logout()" *ngIf="isLogged">Logout</button>
+        <button onclick="window.location.href = '/api/logout';">Logout (backend)</button>
     `
 })
 export class ToolbarComponent implements OnInit {
