@@ -1,5 +1,5 @@
 # spring-angular-keycloak-demo
-Spring Boot + Angular + Keycloak implemntation with common configuration.
+Spring Boot + Angular + Keycloak implementation with common configuration.
 
 #### Keycloak Server
 Run:
@@ -21,7 +21,10 @@ docker build -t michuu93/spring-angular-keycloak-demo .
 ```
 Run:
 ```shell
-docker run --rm --name spring-angular-keycloak-demo -p 8080:9082 michuu93/spring-angular-keycloak-demo
+docker run --rm --name spring-angular-keycloak-demo --network host michuu93/spring-angular-keycloak-demo
 ```
+Use ```--network host``` to solve the problem connecting the container with the application to the container with keycloak.  
+It's a quick solution without editing ```/etc/hosts```.
+
 Open:  
-http://localhost:8080/
+http://localhost:9082/
